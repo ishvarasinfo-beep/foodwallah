@@ -75,6 +75,7 @@
 }
 
 @theme inline {
+  --font-serif: var(--font-port-lligat-slab), "Georgia", serif;
   --font-sans: "Geist", "Geist Fallback";
   --font-mono: "Geist Mono", "Geist Mono Fallback";
   --color-background: var(--background);

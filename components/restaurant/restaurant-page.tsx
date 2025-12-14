@@ -22,7 +22,6 @@ export default function RestaurantPage({ restaurant, onBack, onViewCart }: Resta
 
   return (
     <div className="min-h-screen bg-white">
-      {/* Header */}
       <header className="sticky top-0 z-40 bg-white border-b border-gray-200">
         <div className="max-w-7xl mx-auto px-4 py-4 flex items-center justify-between">
           <button onClick={onBack} className="flex items-center gap-2 text-gray-600 hover:text-gray-900">
@@ -31,26 +30,27 @@ export default function RestaurantPage({ restaurant, onBack, onViewCart }: Resta
 
           <h1 className="text-lg font-bold text-gray-900 flex-1 text-center">{restaurant.name}</h1>
 
-          <div className="flex items-center gap-4">
-            <button className="flex items-center gap-2 text-gray-600 hover:text-orange-500 text-sm font-medium">
-              <MapPin className="w-4 h-4" />
-              Get Direction
-            </button>
-            <button className="text-gray-600 hover:text-orange-500">
-              <Share2 className="w-5 h-5" />
-            </button>
-          </div>
+          <div className="w-6"></div>
         </div>
       </header>
 
       {/* Hero Image */}
       <div className="max-w-7xl mx-auto px-4 py-6">
-        <div className="rounded-2xl overflow-hidden h-64 md:h-80 bg-gray-200 mb-6">
+        <div className="rounded-2xl overflow-hidden h-64 md:h-80 bg-gray-200 mb-6 relative">
           <img
             src={restaurant.image || "/placeholder.svg"}
             alt={restaurant.name}
             className="w-full h-full object-cover"
           />
+          <div className="absolute bottom-4 right-4 flex items-center gap-3">
+            <button className="flex items-center gap-2 bg-white px-4 py-2 rounded-full shadow-md text-gray-700 hover:text-orange-500 text-sm font-medium">
+              <MapPin className="w-4 h-4" />
+              Get Direction
+            </button>
+            <button className="bg-white p-2 rounded-full shadow-md text-gray-700 hover:text-orange-500">
+              <Share2 className="w-5 h-5" />
+            </button>
+          </div>
         </div>
 
         {/* Restaurant Info */}
@@ -95,13 +95,16 @@ export default function RestaurantPage({ restaurant, onBack, onViewCart }: Resta
         </div>
       )}
 
-      {/* Footer */}
-      <footer className="bg-gray-100 border-t border-gray-200 py-8 mt-12">
+      <footer className="bg-gray-50 border-t border-gray-200 py-8 mt-12">
         <div className="max-w-7xl mx-auto px-4">
           <div className="flex items-center gap-4 text-sm text-gray-600">
-            <div className="w-12 h-12 bg-gray-300 rounded"></div>
+            <div className="w-12 h-12 bg-gray-300 rounded flex items-center justify-center">
+              <span className="text-xs font-semibold">FSSAI</span>
+            </div>
             <div>
-              <p className="font-semibold text-gray-900">License No. 12724060000693</p>
+              <p className="font-semibold text-gray-900">
+                <span className="text-gray-600">License No.</span> 12724060000693
+              </p>
               <p className="font-bold text-gray-900">{restaurant.name}</p>
               <p>Address: 17, ganganagar, Rajasthan, 244001</p>
             </div>

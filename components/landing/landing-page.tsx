@@ -65,19 +65,16 @@ export default function LandingPage({ onSelectRestaurant }: LandingPageProps) {
       <header className="bg-white border-b border-gray-200 sticky top-0 z-50">
         <div className="max-w-7xl mx-auto px-4 py-4">
           <div className="flex items-center justify-between">
-            {/* Logo and Location */}
-            <div className="flex items-center gap-8">
-              <h1 className="text-2xl font-bold text-gray-900">FoodWallah</h1>
-              <button className="text-gray-600 hover:text-gray-900 text-sm font-medium flex items-center gap-1">
-                Ganganagar
-                <span className="text-xs">▼</span>
-              </button>
-            </div>
+            <h1 className="text-2xl font-bold text-gray-900">FoodWallah</h1>
 
-            {/* Search, Auth and Cart */}
+            {/* Search, Location, Auth and Cart */}
             <div className="flex items-center gap-4">
               <button onClick={() => setShowSearch(true)} className="text-gray-600 hover:text-gray-900">
                 <Search className="w-5 h-5" />
+              </button>
+              <button className="text-gray-600 hover:text-gray-900 text-sm font-medium flex items-center gap-1">
+                Ganganagar
+                <span className="text-xs">▼</span>
               </button>
               {isLoggedIn && user ? (
                 <>
@@ -98,6 +95,14 @@ export default function LandingPage({ onSelectRestaurant }: LandingPageProps) {
           </div>
         </div>
       </header>
+
+      <div className="w-full h-48 md:h-64 lg:h-80 bg-gradient-to-r from-orange-50 to-orange-100 relative overflow-hidden">
+        <img
+          src="/delicious-food-collage-with-pizza-pasta-sushi-burg.jpg"
+          alt="Delicious Food"
+          className="w-full h-full object-cover"
+        />
+      </div>
 
       {/* Search Modal */}
       {showSearch && (
@@ -130,7 +135,6 @@ export default function LandingPage({ onSelectRestaurant }: LandingPageProps) {
       {/* Main Content */}
       <main className="max-w-7xl mx-auto px-4 py-8">
         <div className="mb-12">
-          <h2 className="text-4xl font-bold text-gray-900 mb-2 text-center">FOOD WALLAH</h2>
           <p className="text-xl text-gray-700 mb-8 text-left">Hey! What's on your mind</p>
 
           {/* Categories Scroll */}
@@ -146,32 +150,28 @@ export default function LandingPage({ onSelectRestaurant }: LandingPageProps) {
           </div>
         </div>
 
-        <div className="mb-8">
-          <h2 className="text-2xl font-bold text-gray-900 mb-6">Restaurant with online food delivery in Ganga Nagar</h2>
-
-          {/* Filters Bar */}
-          <div className="flex items-center gap-4 mb-6">
-            <button className="px-4 py-2 border border-gray-300 rounded-lg text-sm font-medium text-gray-700 hover:bg-gray-50 flex items-center gap-2">
-              Price Range
-              <span className="text-xs">▼</span>
+        {/* Filters Bar */}
+        <div className="flex items-center gap-4 mb-6">
+          <button className="px-4 py-2 border border-gray-300 rounded-lg text-sm font-medium text-gray-700 hover:bg-gray-50 flex items-center gap-2">
+            Price Range
+            <span className="text-xs">▼</span>
+          </button>
+          <button className="px-4 py-2 border border-gray-300 rounded-lg text-sm font-medium text-gray-700 hover:bg-gray-50">
+            Restaurant Type
+          </button>
+          <button className="px-4 py-2 border border-gray-300 rounded-lg text-sm font-medium text-gray-700 hover:bg-gray-50">
+            Filters ✓
+          </button>
+          <button className="px-4 py-2 border border-gray-300 rounded-lg text-sm font-medium text-gray-700 hover:bg-gray-50">
+            Sort
+          </button>
+          <div className="ml-auto flex items-center gap-2">
+            <button className="w-8 h-8 border border-gray-300 rounded-lg flex items-center justify-center hover:bg-gray-50">
+              ←
             </button>
-            <button className="px-4 py-2 border border-gray-300 rounded-lg text-sm font-medium text-gray-700 hover:bg-gray-50">
-              Restaurant Type
+            <button className="w-8 h-8 border border-gray-300 rounded-lg flex items-center justify-center hover:bg-gray-50">
+              →
             </button>
-            <button className="px-4 py-2 border border-gray-300 rounded-lg text-sm font-medium text-gray-700 hover:bg-gray-50">
-              Filters ✓
-            </button>
-            <button className="px-4 py-2 border border-gray-300 rounded-lg text-sm font-medium text-gray-700 hover:bg-gray-50">
-              Sort
-            </button>
-            <div className="ml-auto flex items-center gap-2">
-              <button className="w-8 h-8 border border-gray-300 rounded-lg flex items-center justify-center hover:bg-gray-50">
-                ←
-              </button>
-              <button className="w-8 h-8 border border-gray-300 rounded-lg flex items-center justify-center hover:bg-gray-50">
-                →
-              </button>
-            </div>
           </div>
         </div>
 

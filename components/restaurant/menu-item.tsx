@@ -2,7 +2,6 @@
 
 import { useState } from "react"
 import { Button } from "@/components/ui/button"
-import { Minus, Plus } from "lucide-react"
 
 interface MenuItemProps {
   item: any
@@ -60,19 +59,19 @@ export default function MenuItem({ item, onAddItem }: MenuItemProps) {
           Add
         </Button>
       ) : (
-        <div className="flex items-center gap-3 bg-orange-200 px-3 py-2 rounded-lg flex-shrink-0">
+        <div className="flex items-center gap-2 flex-shrink-0">
           <button
             onClick={handleDecrement}
-            className="w-6 h-6 flex items-center justify-center text-orange-600 hover:text-orange-700 font-bold"
+            className="w-8 h-8 rounded-full bg-white border border-orange-500 flex items-center justify-center text-orange-600 hover:bg-orange-50 font-bold text-xl"
           >
-            <Minus className="w-4 h-4" />
+            −
           </button>
-          <span className="text-orange-600 font-semibold w-8 text-center">{quantity}</span>
+          <span className="text-orange-600 font-bold text-lg w-8 text-center">{quantity}</span>
           <button
             onClick={handleIncrement}
-            className="w-6 h-6 flex items-center justify-center text-orange-600 hover:text-orange-700 font-bold"
+            className="w-8 h-8 rounded-full bg-white border border-orange-500 flex items-center justify-center text-orange-600 hover:bg-orange-50 font-bold text-xl"
           >
-            <Plus className="w-4 h-4" />
+            +
           </button>
         </div>
       )}

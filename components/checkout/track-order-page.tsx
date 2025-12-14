@@ -81,10 +81,9 @@ export default function TrackOrderPage({ onBack }: TrackOrderPageProps) {
           </div>
         </div>
 
-        {/* Main Content Grid */}
-        <div className="grid gap-8 lg:grid-cols-3">
+        <div className="grid gap-8 lg:grid-cols-2">
           {/* Left - Items Ordered and Shipping Info */}
-          <div className="lg:col-span-2 space-y-8">
+          <div className="space-y-8">
             {/* Items Ordered */}
             <div className="rounded-2xl bg-white p-8 shadow-sm border border-gray-200">
               <h3 className="mb-6 text-2xl font-bold text-gray-900">Items Ordered</h3>
